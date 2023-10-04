@@ -9,6 +9,8 @@ Bun.serve({
   port: 5000, // defaults to $BUN_PORT, $PORT, $NODE_PORT otherwise 3000
   // hostname: "mydomain.com", // defaults to "0.0.0.0"
   fetch(req) {
+    return new Response("Welcome to Bun!");
+
     const url = new URL(req.url);
     if (url.pathname === "/") return new Response("Home page!");
     if (url.pathname === "/blog") return new Response("Blog!");

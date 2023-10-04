@@ -7,7 +7,7 @@
   "author": "glauro q juliani",
   "license": "MIT",
   "scripts": {
-    "start": "bun run src/index.ts"
+    "start": "bun --hot run src/index.ts"
   },
   "devDependencies": {
     "@types/react-dom": "^18.2.7",
