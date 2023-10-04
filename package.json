@@ -1,0 +1,23 @@
+{
+  "name": "using-bun",
+  "version": "1.0.0",
+  "description": "",
+  "module": "index.ts",
+  "type": "module",
+  "author": "glauro q juliani",
+  "license": "MIT",
+  "scripts": {
+    "start": "bun --hot run src/index.ts"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.7",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
