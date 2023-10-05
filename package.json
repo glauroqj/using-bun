@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port=5000",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -17,7 +17,6 @@
     "dev-start": "docker-compose up -d && docker ps && yarn dev-logs",
     "dev-stop": "docker-compose stop && docker ps",
     "dev-restart": "yarn dev-stop && docker rm using_bun && yarn dev-start",
-    "dev-restart:old": "docker restart using_bun && yarn dev-logs",
     "dev-logs": "docker logs -f --tail 30 using_bun"
   },
   "dependencies": {

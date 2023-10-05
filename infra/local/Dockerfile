@@ -3,14 +3,14 @@ FROM oven/bun:latest
 WORKDIR /app
 COPY . /app
 
+EXPOSE 5000
+
 # COPY package.json ./
 # COPY bun.lockb ./
 # COPY src ./
-
-CMD yarn dev
-
 RUN bun install
 
+CMD bun dev
 # FROM node:18-alpine
 
 # WORKDIR /app
