@@ -7,7 +7,18 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "###### | DOCKER COMMON SCRIPTS | ##########################################": "",
+    "delete-all": "yarn delete-containers && yarn delete-images && yarn delete-volumes",
+    "delete-containers": "docker container stop $(docker container ls -qa) && docker container rm $(docker container ls -qa)",
+    "delete-images": "docker image rm $(docker image ls -q)",
+    "delete-volumes": "docker volume rm $(docker volume ls -q) && docker system prune",
+    "###### | DOCKER DEV SCRIPTS | ##########################################": "",
+    "dev-start": "docker-compose up -d && docker ps && yarn dev-logs",
+    "dev-stop": "docker-compose stop && docker ps",
+    "dev-restart": "yarn dev-stop && docker rm using_bun && yarn dev-start",
+    "dev-restart:old": "docker restart using_bun && yarn dev-logs",
+    "dev-logs": "docker logs -f --tail 30 using_bun"
   },
   "dependencies": {
     "react": "^18.2.0",
