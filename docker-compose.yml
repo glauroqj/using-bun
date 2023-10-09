@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  using_bun:
+    container_name: using_bun
+    privileged: true
+    build:
+      context: ./
+      dockerfile: ./infra/local/Dockerfile
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    env_file:
+      - ./infra/local/.env.local
+    ports:
+      - "5000:5000"
